@@ -1,6 +1,8 @@
 # Comp333 Assignment5
 ## Problem 1
-
+```
+python3 unit_test.py
+```
 ## Problem 2
   - To run locally, make sure that [Python](https://www.python.org/) is installed on your computer. With Python comes Pip.
       - To ensure Python and pip are properly installed run
@@ -16,3 +18,8 @@
   - In Xampp, start the Apache and MySQL servers.
   - Take the backend code that is in the folder backendCode and place this in your htdocs folder found in xampp. 
   - While in the test_project folder, run `php vendor/bin/phpunit tests` to run the tests. 
+## Problem 4
+run
+```
+npm test
+```
