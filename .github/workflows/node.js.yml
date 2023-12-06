@@ -27,6 +27,7 @@ jobs:
         path: ~/question4/
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
+        cache-dependency-path: ~/question4/package-lock.json
     - run: npm ci
     - run: npm run build --if-present
     - run: npm test
