@@ -8,6 +8,13 @@ def Test (testF, input, ans):
         else:
             print("fail")
 
+def ListTest (testF, input, ans): 
+    for test_num in range(len(input)):
+        print(f"test {test_num}")
+        output = testF(input[test_num])
+        for out_num in range(len(output)):
+            
+
 def main():
     Test(UnitTest.string_capitalizer, ["one","two","three"], ["OnE", "TwO", "ThreE"])
     # TODO: Add more tests
