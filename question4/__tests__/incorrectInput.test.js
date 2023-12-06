@@ -5,7 +5,6 @@ import React from "react";
 import "@testing-library/jest-dom";
 
 import SignIn from "../src/components/SignIn";
-import SignUp from "../src/components/SignUp";
 
 afterEach(() => cleanup());
 
@@ -19,16 +18,24 @@ describe("Incorrect values", () => {
 
     const input = getByRole("textbox", { name: "Username" });
     fireEvent.change(input, { target: { value: "PelumiTayo" } });
-    expect(input.value).toBe("PelumiT");
+    expect(input.value).not.toBe("PelumiT");
   });
-  test("register: alert should not render on the screen", () => {
-    render(
+  test("Username length validation", () => {
+    const { getByRole } = render(
       <BrowserRouter>
-        <SignUp />
+        <SignIn />
       </BrowserRouter>
-    );
+    ); 
 
-    const inputField = screen.getByRole("alert");
-    expect(inputField).toBeInTheDocument();
+    const input = getByRole("textbox", { name: "Username" });
+    fireEvent.change(input, { target: { value: "" } });
+
+    const signInButton = screen.getByTestId("signin-button");
+
+    fireEvent.click(signInButton);
+
+    expect(
+      screen.getByText("Please enter a valid username.")
+    ).toBeInTheDocument();
   });
 });

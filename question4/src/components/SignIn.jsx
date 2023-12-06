@@ -169,6 +169,7 @@ export default function SignUp({ setIsLogged, totalRatings, setTotalRatings }) {
             style={{ margin: "8px 0", backgroundColor: "#FFAC4B" }}
             onClick={handleSubmit}
             fullWidth
+            data-testid="signin-button"
           >
             Sign In
           </Button>
